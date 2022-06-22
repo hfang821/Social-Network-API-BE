@@ -5,7 +5,9 @@ const {
     getUserId,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    postFriend,
+    deleteFriend
 } = require('../../controllers/user-controller');
 
 // /api/users
@@ -13,6 +15,12 @@ router
   .route('/')
   .get(getAllUsers)
   .post(createUser);
+
+//the friend route should be above the user/:id route because of the order of specifity 
+router
+  .route('/friend/:id')
+  .post(postFriend)
+  .delete(deleteFriend)
 
 // /api/user/:id
 router

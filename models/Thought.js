@@ -14,7 +14,7 @@ const ReactionSchema = new Schema(
             maxLength: 280
         },
         username: {
-            type: string,
+            type: String,
             required: 'You need to provide a username',
             trim: true
         },
@@ -46,7 +46,7 @@ const ThoughtSchema = new Schema(
             get: createdAtVal => dateFormat(createdAtVal)
         },
         username: {
-            type: string,
+            type: String,
             required: 'You need to provide a username',
             trim: true
         },

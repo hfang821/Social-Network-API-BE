@@ -47,7 +47,7 @@ const thoughtController = {
                     res.status(404).json({message: 'Thought not found with this id'});
                     return;
                 }
-                //ask Ta: why do we need to delete the User? Or is it just pulling thought from an array in a User?
+                //We need to update the User object as well since the thought array is defined in the User object
                 return User.findOneAndDelete(
                     {_id: params.userId},
                     {$pull: {thoughts: params.thoughtId}},
